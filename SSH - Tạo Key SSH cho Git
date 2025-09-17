@@ -1,0 +1,60 @@
+SSH - Tạo Key SSH cho Git
+---------
+
+## Generating a new SSH key
+
+1/ Open Git Bash.
+
+2/ Paste the text below, replacing the email used in the example with your GitHub email address.
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+> **Note**  
+> If you are using a legacy system that doesn't support the Ed25519 algorithm, use:
+>
+> ```bash
+> ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+> ```
+
+When you're prompted to "Enter a file in which to save the key", you can press Enter to accept the default file location. Please note that if you created SSH keys previously,
+ssh-keygen may ask you to rewrite another key, in which case we recommend creating a custom-named SSH key. To do so, type the default file location and replace id_ALGORITHM with your custom key name.
+
+```bash
+> Enter file in which to save the key (/c/Users/YOU/.ssh/id_ALGORITHM):[Press enter]
+```
+
+3/ At the prompt, type a secure passphrase
+
+```bash
+> Enter passphrase (empty for no passphrase): [Type a passphrase] or [Press enter]
+> Enter same passphrase again: [Type passphrase again] or [Press enter]
+```
+
+4/ Truy cập vào thư mục `/c/Users/YOU/.ssh/id_ALGORITHM` nơi vừa chọn lưu ssh key về
+
+Bấm chuột phải vào file `id_id_ALGORITHM.pub`
+
+Chọn *Edit with Notepad*
+
+Sau đó sao chép toàn bộ nội dung bên trong file này.
+
+5/ Gán ssh key này vào ssh key trên Github
+
+- Vào Github bấm chọn Profile -> chọn Settings
+- Tại Tab bên trái chọn *SSh and GPG keys*
+- Tại SSH keys chọn New SSH key
+- Dán phần sao chép vừa rồi vào phần *Key*
+<img width="1039" height="532" alt="image" src="https://github.com/user-attachments/assets/2d5637a1-af89-4dc7-918a-418ec99ae51e" />
+
+5/ Khi clone dự án bất kì ta sẽ lựa chọn SSH 
+
+<img width="398" height="419" alt="image" src="https://github.com/user-attachments/assets/5d9c2590-f303-4361-aeb8-bf1f0efe7783" />
+
+
+
+
+
+
+
